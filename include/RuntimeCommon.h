@@ -75,7 +75,6 @@ SymExpr _sym_build_arithmetic_shift_right(SymExpr a, SymExpr b);
 SymExpr _sym_build_funnel_shift_left(SymExpr a, SymExpr b, SymExpr c);
 SymExpr _sym_build_funnel_shift_right(SymExpr a, SymExpr b, SymExpr c);
 SymExpr _sym_build_abs(SymExpr expr);
-
 /*
  * Arithmetic with overflow
  */
@@ -227,6 +226,13 @@ void _sym_collect_garbage(void);
 void symcc_make_symbolic(const void *start, size_t byte_length);
 typedef void (*TestCaseHandler)(const void *, size_t);
 void symcc_set_test_case_handler(TestCaseHandler handler);
+
+void symcc_save_numeric_expr(const char * name, double value);
+float symcc_make_symbolic_float(const char* name, float value);
+float symcc_make_symbolic_bounded_float(const char* name,float value,float minv, float maxv);
+double symcc_make_symbolic_double(const char* name, double value);
+double symcc_make_symbolic_bounded_double(const char *name, double value, float minv, float maxv);
+
 
 #ifdef __cplusplus
 }

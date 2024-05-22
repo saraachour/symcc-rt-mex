@@ -449,6 +449,7 @@ SymExpr _sym_build_funnel_shift_right(SymExpr a, SymExpr b, SymExpr c) {
                              bits);
 }
 
+
 SymExpr _sym_build_abs(SymExpr expr) {
   size_t bits = _sym_bits_helper(expr);
   return _sym_build_ite(
@@ -459,6 +460,34 @@ SymExpr _sym_build_abs(SymExpr expr) {
 void _sym_register_expression_region(SymExpr *start, size_t length) {
   registerExpressionRegion({start, length});
 }
+
+void symcc_save_numeric_expr(const char * name, double value){
+  printf("[ERROR] compiler should strip this out");
+  exit(1);
+}
+float symcc_make_symbolic_float(const chra * name, float value){
+  printf("[ERROR] compiler should strip this out");
+  exit(1);
+
+}
+float symcc_make_symbolic_bounded_float(const char* name,float value, float minv, float maxv){
+  printf("[ERROR] compiler should strip this out");
+  exit(1);
+}
+double symcc_make_symbolic_double(const char* name, double value){
+  printf("[ERROR] compiler should strip this out");
+  exit(1);
+
+}
+double symcc_make_symbolic_bounded_double(const char *name, double value, float minv, float maxv){
+  printf("[ERROR] compiler should strip this out");
+  exit(1);
+
+}
+
+
+
+
 
 void _sym_make_symbolic(const void *data, size_t byte_length,
                         size_t input_offset) {
@@ -478,6 +507,8 @@ void symcc_make_symbolic(const void *start, size_t byte_length) {
   _sym_make_symbolic(start, byte_length, inputOffset);
   inputOffset += byte_length;
 }
+
+
 
 SymExpr _sym_build_bit_to_bool(SymExpr expr) {
   if (expr == nullptr)
