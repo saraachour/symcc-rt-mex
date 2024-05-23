@@ -465,7 +465,7 @@ void symcc_save_numeric_expr(const char * name, double value){
   printf("[ERROR] compiler should strip this out");
   exit(1);
 }
-float symcc_make_symbolic_float(const chra * name, float value){
+float symcc_make_symbolic_float(const char * name, float value){
   printf("[ERROR] compiler should strip this out");
   exit(1);
 
